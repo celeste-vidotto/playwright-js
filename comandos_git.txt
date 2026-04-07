@@ -1,0 +1,17 @@
+mkdir nombre-proyecto //crea un proyecto
+
+cd url_del_archivo_del_proyecto // identifica donde esta 
+
+git init //lo inicializo: lo digo a git que comience a funcionar dentro de ese directorio.
+
+//"TRAKKEAR" como actualizar con git lo q hago en el vs code
+
+git add. //añade todo los archivos que hemos modificado
+
+git.status //ver el estado del repositorio
+
+git commit //te abre el vs code para explicar en un comentario que cambios hice y pq los hice
+
+git commit -m "mensaje" //escribir directamente en la terminal
+
+rmdir /s /q PruebaGit\.git //elimina proyecto

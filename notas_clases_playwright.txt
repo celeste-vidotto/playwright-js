@@ -1,0 +1,111 @@
+npm init // para instalar 
+
+npm i //para iniciar el proyecto
+
+npx playwright test // corre el codigo sin inspeccionar nada.
+
+//para ejecutar sin ver el caso - funiona mas rapido 
+
+npx playwright test --headed 
+
+//Alternativa si hay múltiples elementos que contienen el texto:
+
+await expect(invalidCreds).toHaveCount(1);
+
+//para inicar grabacion de pagina 
+
+npx playwright codegen https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+
+//mostrame en la consola lo que este sucediendo en este momento.
+
+console.log(variable)
+----------------------------------------------------------------------------
+//para conectar un repo de git con mi archivo de vs code con el link de mi repo o el de quien quiera clonar 
+
+git clone https://github.com/celeste-vidotto/PruebaGit.git
+
+git commin -m "MiPrimeroCommit"
+
+git add. //me agrega los archivos al github
+
+//PARA CLONARME ALGO DE ALQUIEN MAS solo copio su url de git como hice antes
+
+Un HEADLESS es la interfaz grafica donde corre la prueba. si es. 
+headless: false // se abre el navegador visiblemente
+headless: true //el navegador corre invisiblemente. 
+---------------------------------------------------------------------------
+//ver la ejecucion en iu del caso de prueba: con esto veo bien si algo fallo de v o si fallo por codigo, timeout o q paso
+
+npx playwrith --ui
+
+//luego el elijo el caso de prueba y le doy run. o bien 
+npx playwright nombre_del_caso --ui
+
+//para que playwrith filme o saque captura de pantalla 
+
+las columnas:
+
+action:todo lo que realiza mi proyecto -> before/after hock: acciones previas/posteriores al caso de prueba. PJ para setear entornos.
+precondiciones y postcondiciones
+
+methadata: 
+
+----------------------------------------------------------------------------
+//para mostrar reporte:
+npm playwright show report
+
+para configurar timeout, ir al archivo playwright.config.js ahi aumento el tiempo de espera con 
+timeout: 50000 // en linea 34, son 5 segs cada await o step espera eso. 
+
+---------------------------------------------------------------------------
+//para debuggear casos de pruebas. Abre modo debug interactivo
+npx playwright test --debug //activo cuando necesito inspeccionar algo
+
+por caso de prueba por caso de prueba, por caso de prueba fallido, etc 
+puedo debuggear en el archivo de ejecucion: *test runner*(dice como se ejecutan los casos de prueba)
+en playwright es automatico y se guarda en notemodules 
+
+en el CALL STACK: te muestra todo lo que abrio y lo que se ejecuto.
+
+//pausa el test y abre un inspector visual
+await page().pause(); // o puedo usar un breakpoint.
+
+
+NOTA: usa estos dos comandos siempre que algo falle, sea inestable es decir a veces pasa y otras no, y cuando estas desarrollando el test.
+
+en variables: esta todo lo que esta en: web--> examinar --> console/source:las carpetas que tiene el navegador/
+network:funciones y llamadas/acciones de api,etc--> fetch/xhr:aca veo los archivos involucrados aca.
+
+en la consola--> click derecho--> evaluate in debug console-->te va diciendo lo que hace sin abrir nada
+
+
+
+--------------------------------------------------------------------------
+1.Escribís test
+2.Debuggeás (modo visible)
+3.Lo hacés estable
+4.Sacás debug
+5.Corrés en headless
+6.Subís a GitHub
+--------------------------------------------------------------------------
+herramienta de reporte:
+ALIUM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
