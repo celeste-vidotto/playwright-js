@@ -15,3 +15,8 @@ git commit //te abre el vs code para explicar en un comentario que cambios hice 
 git commit -m "mensaje" //escribir directamente en la terminal
 
 rmdir /s /q PruebaGit\.git //elimina proyecto
+
+git remote add origin url_de_my_repo_github //linkeo mi repo local con github
+
+git branch -M main //creo mi rama main
+git push -u origin main //sube mi codigo al repo
