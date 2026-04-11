@@ -12,3 +12,10 @@ test('test', async ({ page }) => {
   await page.getByRole('alert').locator('div').filter({ hasText: /^Invalid credentials$/ });
 
 });
+
+//codigo limpio:
+import { LoginHelp } from '../HELPER/LoginHelp.js';
+test('sensibilidad al espacio', async ({ page }) => {
+  await LoginHelp(page, ' Admin ', 'admin123 ');
+  await page.getByRole('alert').locator('div').filter({ hasText: /^Invalid credentials$/ });
+});

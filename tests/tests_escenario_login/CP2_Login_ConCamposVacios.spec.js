@@ -12,3 +12,10 @@ test('test', async ({ page }) => {
   await expect(page.locator('.oxd-input-field-error-message').filter({ hasText: 'Required' })).toHaveCount(2);
 
 });
+
+//con codigo limpio:
+import { LoginHelp } from '../HELPER/LoginHelp.js';
+test('Login con campos vacios', async ({ page }) => {
+  await LoginHelp(page, '', '');
+  console.log('Login con campos vacios');
+});

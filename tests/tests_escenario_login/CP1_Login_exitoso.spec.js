@@ -14,9 +14,15 @@ test('test', async ({ page }) => {
   await page.getByRole('button', { name: 'Login' }).click();
 });
 
-//NOTA PARA PREGUNTAR: wait page.getByRole('textbox', { name: 'Username' }).click();  
-// con esta linea de click me tira error ¿¿¿¿?????????????
-// click para botton no para textbox, por eso me tira error.
+//mismo caso pero con codigo mas limpio y 
+// reutilizando funciones y datos:
+import { LoginHelp } from '../HELPER/LoginHelp.js';
+import { password, username } from '../DATOS/users.js';
+
+test('Login exitoso', async ({ page }) => {
+  await LoginHelp(page, username, password);
+  console.log('Login exitoso');
+}); 
 
 
 

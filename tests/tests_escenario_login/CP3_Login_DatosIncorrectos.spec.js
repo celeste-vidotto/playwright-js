@@ -13,3 +13,11 @@ test('test', async ({ page }) => {
   await page.getByRole('alert').locator('div').filter({ hasText: /^Invalid credentials$/ });
 
 });
+
+//con codigo limpio:
+import {LoginHelp} from '../HELPER/LoginHelp.js';
+test ('Login con datos incorrectos', async ({ page }) => {
+  await LoginHelp(page,'userincorrecto','passwordincorrecta');
+  await page.getByRole('alert').locator('div').filter({ hasText: /^Invalid credentials$/ });
+  
+});

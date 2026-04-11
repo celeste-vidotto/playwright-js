@@ -13,3 +13,10 @@ test('test', async ({ page }) => {
   await page.getByRole('alert').locator('div').filter({ hasText: /^Invalid credentials$/ });
 
 });
+//codigo limpio:
+
+import { LoginHelp } from '../HELPER/LoginHelp.js';
+test('Sensibilidad a minúsculas', async ({ page }) => {
+  await LoginHelp(page, 'ADMIN', 'ADMIN123');
+  await page.getByRole('alert').locator('div').filter({ hasText: /^Invalid credentials$/ });
+});

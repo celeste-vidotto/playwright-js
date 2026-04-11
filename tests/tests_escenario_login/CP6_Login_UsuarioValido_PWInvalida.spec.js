@@ -16,3 +16,10 @@ test('test', async ({ page }) => {
   await page.getByRole('alert').locator('div').filter({ hasText: /^Invalid credentials$/ });
 
 });
+//codigo limpio:
+
+import { LoginHelp } from '../HELPER/LoginHelp.js';
+test('Login con usuario valido y contraseña invalida', async ({ page }) => {
+  await LoginHelp(page, 'Admin', 'passwordinvalida');
+  await page.getByRole('alert').locator('div').filter({ hasText: /^Invalid credentials$/ });
+});
