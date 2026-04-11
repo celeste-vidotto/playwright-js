@@ -1,0 +1,7 @@
+const {aca es el tipo de dato que espero o dependencias} //es un dato de memoria, es como si importara algo dsp
+
+import {} // importo helpers
+
+module.exports = { login } //declaro que este helper lo puedo usar importandolo en otra parte de codigo
+
+page //

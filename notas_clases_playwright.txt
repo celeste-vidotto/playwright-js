@@ -2,7 +2,7 @@ npm init // para instalar
 
 npm i //para iniciar el proyecto
 
-npx playwright test // corre el codigo sin inspeccionar nada.
+npx playwright test // corre toda la carpeta test sin inspeccionar nada. y abre al final reporte web 
 
 //para ejecutar sin ver el caso - funiona mas rapido 
 
@@ -61,6 +61,9 @@ timeout: 50000 // en linea 34, son 5 segs cada await o step espera eso.
 //para debuggear casos de pruebas. Abre modo debug interactivo
 npx playwright test --debug //activo cuando necesito inspeccionar algo
 
+npx playwright test -g "nombre del archivo del cp que quiero correr" --debug //debuggea solo este archivo/cp
+
+
 por caso de prueba por caso de prueba, por caso de prueba fallido, etc 
 puedo debuggear en el archivo de ejecucion: *test runner*(dice como se ejecutan los casos de prueba)
 en playwright es automatico y se guarda en notemodules 
@@ -91,8 +94,23 @@ en la consola--> click derecho--> evaluate in debug console-->te va diciendo lo 
 herramienta de reporte:
 ALIUM
 
+----------------------------------------------------------
+UTILES:
+
+METODO HELPER: encapsul el metodo codeado que vamos a utilizar muchas veces, pj: un login 
+
+//defino variable:
+var contraseña = "admin123"
+
+muestra los valores en pantalla:
+console.log("password", contraseña) //establesco variable
+
+ls //lista archivos y carpetas
+
+package.json //con esto sabemos que tipo de proyecto es pj: packege.pom.xml es en formato html es de java
 
 
+.spec.js //es solo para casos de prueba
 
 
 
