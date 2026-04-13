@@ -12,10 +12,9 @@ await page.fill('#input', 'Hola'); //completar
 const texto = await page.textContent('h1');//obtener contenido
 await page.waitForSelector('#resultado'); //esperar algo
 
-test('test', async ({ page }) => {
-  // acciones
-}); 
-//Definí un test llamado ‘test’, que es una función asíncrona, y pasame el objeto page para poder interactuar con la página web.”
+test('test', async ({ page }) => {// acciones}); 
+//Definí un test llamado ‘test’, que es una función asíncrona, y pasame el objeto page para poder interactuar con la página web.” 
+ASYNC: asincronico
 
 EJEMPLO FUNCION exportada:
 function sumar(a, b) {
@@ -28,5 +27,6 @@ const sumar = require('./suma');
 
 console.log(sumar(2, 3)); // devuelve impreso 5
 
+./ salgo 1 vez del archivo ../salgo dos veces 
 
 

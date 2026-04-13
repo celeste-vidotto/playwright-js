@@ -2,7 +2,7 @@ npm init // para instalar
 
 npm i //para iniciar el proyecto
 
-npx playwright test // corre toda la carpeta test sin inspeccionar nada. y abre al final reporte web 
+npx playwright test // corre toda la carpeta test sin inspeccionar nada. y abre al final reporte web. Este comando ejecuta todos los archivos .spec.js que se encuentran dentro de la carpeta tests.
 
 //para ejecutar sin ver el caso - funiona mas rapido 
 
@@ -36,7 +36,7 @@ headless: true //el navegador corre invisiblemente.
 ---------------------------------------------------------------------------
 //ver la ejecucion en iu del caso de prueba: con esto veo bien si algo fallo de v o si fallo por codigo, timeout o q paso
 
-npx playwrith --ui
+npx playwrith --ui //Esto permite ver los tests ejecutándose y analizar los resultados.
 
 //luego el elijo el caso de prueba y le doy run. o bien 
 npx playwright nombre_del_caso --ui
@@ -95,9 +95,10 @@ herramienta de reporte:
 ALIUM
 
 ----------------------------------------------------------
-UTILES:
+UTILES:archivo o funcion reutilizable generica no de algun proyecto en particular.
+POM: page object model// es un patron de diseño, representa cada pagina de la app como una clase/archivo
 
-METODO HELPER: encapsul el metodo codeado que vamos a utilizar muchas veces, pj: un login 
+METODO HELPER: encapsul el metodo codeado que vamos a utilizar muchas veces en un mismo proyecto, pj: un login 
 
 //defino variable:
 var contraseña = "admin123"
@@ -112,11 +113,15 @@ package.json //con esto sabemos que tipo de proyecto es pj: packege.pom.xml es e
 
 .spec.js //es solo para casos de prueba
 
+allure: herramienta para reporte de testing
 
+POC:PRUEBA DE CONCEPTO
 
+DEPLOY: SUBIR LO QUE TENEMOS DESARROLLADO 
+A PRODUCCION, se sube con un ticket deployment
 
-
-
+merge o mr: una comparacion entre la rama main y
+un branch de rama con correcciones, que muestra las diferencias y cambios.
 
 
 
