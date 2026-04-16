@@ -15,7 +15,7 @@ test('test', async ({ page }) => {
 
 //con codigo limpio:
 import { LoginHelp } from '../HELPER/LoginHelp.js';
-test('Login con campos vacios', async ({ page }) => {
-  await LoginHelp(page, '', '');
-  console.log('Login con campos vacios');
+test('Login con campos vacios', async ({ page }) => { 
+  await LoginHelp(page, '', ''); //arrange esta en el helper //act
+  console.log('Login con campos vacios'); //assert
 });

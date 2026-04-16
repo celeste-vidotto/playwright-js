@@ -16,6 +16,8 @@ git commit //te abre el vs code para explicar en un comentario que cambios hice 
 
 git commit -m "mensaje" //escribir directamente en la terminal
 
+
+
 rmdir /s /q PruebaGit\.git //elimina proyecto
 
 git remote add origin url_de_my_repo_github //linkeo mi repo local con github
@@ -97,5 +99,7 @@ cd v ytocoTAB //me manda al branch que corresponde y desde aca hago el clon
 git log // veo historial de los commits.
 
 control C/quit/q para salir de comandos
+
+git switch nombre_branch //y te salta al otro branch
 
 fetch// trae las ultimas actualizaciones de la rama
