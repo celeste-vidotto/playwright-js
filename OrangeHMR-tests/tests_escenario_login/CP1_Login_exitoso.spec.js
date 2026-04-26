@@ -21,7 +21,7 @@ import { password, username } from '../DATOS/users.js';
 
 test('Login exitoso', async ({ page }) => {
   await LoginHelp(page, username, password);
-  console.log('Login exitoso');
+  console.log('Login exitoso'); //falta assert
 }); 
 
 
