@@ -28,5 +28,7 @@ const sumar = require('./suma');
 console.log(sumar(2, 3)); // devuelve impreso 5
 
 ./ salgo 1 vez del archivo ../salgo dos veces 
+si necesito salir mas ../../ cuantas veces sea necesario.
+
 
 

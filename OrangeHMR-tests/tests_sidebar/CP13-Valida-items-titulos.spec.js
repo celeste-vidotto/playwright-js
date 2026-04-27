@@ -2,11 +2,11 @@ import { test, expect } from '@playwright/test';
 
 import {LoginHelp} from '../HELPER/LoginHelp.js';
 
-import { username, password } from '../DATOS/users.js';
+import { usuarioValidousername, usuarioValidopassword } from '../DATOS/users.json';
 
 test('Validate sidebar items and titles', async ({ page }) => {
 //arrenge
-    await LoginHelp(page, username, password); 
+    await LoginHelp(page, usuarioValido.username, usuarioValido.password); 
 //acts
 const ElementsFromSidebar = ['Admin', 'PIM', 'Leave', 'Time', 'Recruitment', 
 'My Info', 'Performance', 'Dashboard', 'Directory', 'Maintenance', 'Claim', 'Buzz'];

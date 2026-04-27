@@ -2,10 +2,12 @@
 
 const { expect } = require('@playwright/test');
 const BasePage = require('./BasePage');
+import { BasePage } from './basePage.js';
 
-class adminPage{
-    constructor(page){
-        super(page); 
+export class adminPage extends BasePage {
+  constructor(page) {
+    super(page);
+  }
 
         this.adminTitle = page.locator('h6');
         //this.UsernameLabel el input cambia constantemente, por lo que no puedo mappear?
@@ -14,6 +16,9 @@ class adminPage{
         this.resetButton = page.getByRole('button', { name: 'Reset' });
         this.addButton = page.getByRole('button', { name: '+ Add' });
 }
+    async OpenModuloAdmin(){
+        await this.page.getByRole('link', { name: 'Admin' }).click();
+}   
     async userRole(roll) { //uso esto pq las opciones de user role y status son
     // desplegables, entonces tengo que escribir el valor que quiero 
     // y luego hacer click en la opcion que me aparece

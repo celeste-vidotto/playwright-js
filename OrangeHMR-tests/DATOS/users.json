@@ -1,0 +1,24 @@
+
+{
+    "usuarioValido": {
+        "username": "Admin",
+        "password": "admin123"
+    },
+
+    "filtroUserValido": {
+        "username": "AdminESS",
+        "userRole": "Admin",
+        "employeeName": "Qwerty Qwerty LName",
+        "status": "Enabled"
+    },
+
+    "filtroUserInvalido": {
+        "username": "AdminESS",
+        "userRole": "Admin",
+        "employeeName": "Qwerty Qwerty LName",
+        "status": "Disabled"
+    }
+
+    
+}
+

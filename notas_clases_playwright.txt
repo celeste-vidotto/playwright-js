@@ -36,10 +36,10 @@ headless: true //el navegador corre invisiblemente.
 ---------------------------------------------------------------------------
 //ver la ejecucion en iu del caso de prueba: con esto veo bien si algo fallo de v o si fallo por codigo, timeout o q paso
 
-npx playwrith --ui //Esto permite ver los tests ejecutándose y analizar los resultados.
+npx playwrith test --ui //Esto permite ver los tests ejecutándose y analizar los resultados.
 
 //luego el elijo el caso de prueba y le doy run. o bien 
-npx playwright nombre_del_caso --ui
+npx playwright url_nombre_del_caso --ui o npx playwright test --ui -g "solo_nombre_del_caso"
 
 //para que playwrith filme o saque captura de pantalla 
 
@@ -92,7 +92,10 @@ en la consola--> click derecho--> evaluate in debug console-->te va diciendo lo 
 6.Subís a GitHub
 --------------------------------------------------------------------------
 herramienta de reporte:
-ALIUM
+ALLURE: 
+
+npx allure-commandline generate ./allure-results --clean -o ./allure-report
+npx allure-commandline open ./allure-report
 
 ----------------------------------------------------------
 UTILES:archivo o funcion reutilizable generica no de algun proyecto en particular.

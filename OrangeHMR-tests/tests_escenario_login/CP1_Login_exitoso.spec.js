@@ -17,7 +17,7 @@ test('test', async ({ page }) => {
 //mismo caso pero con codigo mas limpio y 
 // reutilizando funciones y datos:
 import { LoginHelp } from '../HELPER/LoginHelp.js';
-import { password, username } from '../DATOS/users.js';
+import { password, username } from '../DATOS/users.json';
 
 test('Login exitoso', async ({ page }) => {
   await LoginHelp(page, username, password);
