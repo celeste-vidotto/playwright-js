@@ -2,8 +2,7 @@
 //poder ser reutilizados en los casos de prueba
 
 
-
-class BasePage { //creo una clase llamada BasePage
+export class basePage { //creo una clase llamada BasePage
   constructor(page) {  //recibe al navegador 
         //CONSTRUCTOR:Es un método especial de una clase que se ejecuta automáticamente 
         // cuando creás una instancia.
@@ -35,4 +34,4 @@ class BasePage { //creo una clase llamada BasePage
   } //waitFor es una funcion de Playwright que espera a que un elemento cumpla una condicion, en este caso que su estado sea 'visible'
 }
 
-module.exports = BasePage; //esto exporta la clase BasePage para que pueda ser utilizada en otros archivos, como los casos de prueba.
+//export default basePage; //esto exporta la clase BasePage para que pueda ser utilizada en otros archivos, como los casos de prueba.

@@ -31,4 +31,57 @@ console.log(sumar(2, 3)); // devuelve impreso 5
 si necesito salir mas ../../ cuantas veces sea necesario.
 
 
+constructor:
+Un constructor es un método especial dentro de una clase que se ejecuta automáticamente cuando creás un objeto.
+ej:
+class Persona {
+  constructor(nombre) {
+    this.nombre = nombre;
+  }
+}
+uso/instancia: 
+const p = new Persona('Celeste');
+console.log(p.nombre); // Celeste
 
+traduccion: “Cuando creo una Persona, le paso un nombre y lo guarda”
+
+class = molde
+constructor = inicializador
+new = crea el objeto
+-------
+SUPER: “acceder a la clase padre (la clase base)”
+Se usa cuando una clase extiende (extends) otra.
+
+extends = heredar
+super() = llamar al constructor del padre
+super.metodo() = usar métodos del padre
+obligatorio antes de usar this
+
+ejemplo:
+class BasePage {
+  constructor(page) {
+    this.page = page;
+  }
+
+  async navigate(url) {
+    await this.page.goto(url);
+  }
+}
+
+module.exports = { BasePage };
+
+uso:const { BasePage } = require('./BasePage');
+
+class LoginPage extends BasePage {
+  constructor(page) {
+    super(page); // 👈 clave
+  }
+
+  async login(user, pass) {
+    await this.page.fill('#user', user);
+    await this.page.fill('#pass', pass);
+  }
+}
+
+module.exports = { LoginPage };
+--------------------------------------------------------

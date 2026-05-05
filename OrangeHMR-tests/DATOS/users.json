@@ -6,9 +6,10 @@
     },
 
     "filtroUserValido": {
-        "username": "AdminESS",
+        "username": "ADMIN3",
         "userRole": "Admin",
-        "employeeName": "Qwerty Qwerty LName",
+        "employeeName": "Api",
+        "employeeNameList": "ApiTestMORZML3R Automation",
         "status": "Enabled"
     },
 
