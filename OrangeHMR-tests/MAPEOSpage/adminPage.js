@@ -24,17 +24,16 @@ export class adminPage extends basePage{
         await expect(this.adminTitle).toHaveText(expectedTitle); // esto es que el titulo de la pagina diga Admin
     }
 
-    async userRole(roll) { //uso esto pq las opciones de user role y status son
+    async userRole( roll ) { //uso esto pq las opciones de user role y status son
     // desplegables, entonces tengo que escribir el valor que quiero 
     // y luego hacer click en la opcion que me aparece
-
-        await this.input.fill(roll);
-        await this.page.getByText(roll).click(); //terminar 
+        await this.page.locator('.oxd-icon.bi-caret-down-fill.oxd-select-text--arrow').first().click();
+        await this.page.getByRole('option', { name: roll }).click();
     }
 
     async Status(estado) {
-        await this.input.fill(estado);
-        await this.page.getByText(estado).click(); //terminar 
+        await this.page.locator('div:nth-child(4) > .oxd-input-group > div:nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon').click();
+        await this.page.getByRole('option', { name: estado }).click();
     }
   
     async AdminElementsBeVisible(){
