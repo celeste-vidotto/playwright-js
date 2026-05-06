@@ -22,9 +22,13 @@ test('Query user not exist', async ({ page }) => {
 //act
   await page.getByRole('textbox').nth(1).fill(camposDeFiltro.username);  
   await OpenAdmin.userRole(camposDeFiltro.userRole); 
-  //deberia sumar el employee name "invalidate"
+  //reever si carga employee name "invalidate"
+  await page.getByRole('textbox', { name: 'Type for hints...' }).fill(camposDeFiltro.employeeName);
+  await page.getByRole('textbox', { name: 'No Records Found', timeout: 100000  }).click();
+  await expect(page.getByText('Invalid')).toBeVisible();
   await OpenAdmin.Status(camposDeFiltro.status); 
   await page.getByRole('button', { name: 'Search' }).click();
+
 
 
   //asserts

@@ -1,61 +1,34 @@
 import { test, expect } from '@playwright/test';
+import { LoginHelp } from '../../HELPER/LoginHelp.js';
+import { adminPage } from '../../MAPEOSpage/adminPage.js';
+const user = require('../../DATOS/users.json'); 
 
-test('test', async ({ page }) => {
-  await page.goto('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
-  await page.getByText('AdminUser Management Upgrademuser').click();
-  await page.getByRole('heading', { name: 'Admin' }).click();
-  await page.locator('div').filter({ hasText: /^AdminUser Management$/ }).click();
-  await page.getByRole('heading', { name: '/ User Management' }).click();
-  await page.getByRole('banner').locator('div').filter({ hasText: 'User Management Job' }).click();
-  await page.getByRole('listitem').filter({ hasText: 'User Management' }).click();
-  await page.getByRole('listitem').filter({ hasText: 'Job' }).click();
-  await page.getByRole('listitem').filter({ hasText: 'Organization' }).click();
-  await page.getByRole('listitem').filter({ hasText: 'Qualifications' }).click();
-  await page.getByRole('listitem').filter({ hasText: 'Nationalities' }).click();
-  await page.getByRole('listitem').filter({ hasText: 'Corporate Branding' }).click();
-  await page.getByRole('listitem').filter({ hasText: 'Configuration' }).click();
-  const page1Promise = page.waitForEvent('popup');
-  await page.getByTitle('Help').click();
-  const page1 = await page1Promise;
-  await page.locator('div').filter({ hasText: 'System UsersUsernameUser Role' }).nth(4).click();
-  await page.getByText('System UsersUsernameUser Role').click();
-  await page.getByRole('heading', { name: 'System Users' }).click();
-  await page.getByRole('button').nth(3).click();
-  await page.getByRole('button').nth(3).click();
-  await page.getByText('Username', { exact: true }).click();
-  await page.getByRole('textbox').nth(1).click();
-  await page.getByText('User Role', { exact: true }).click();
-  await page.locator('div').filter({ hasText: /^-- Select --$/ }).nth(2).click();
-  await page.locator('div').filter({ hasText: /^-- Select --$/ }).nth(2).click();
-  await page.locator('.oxd-icon.bi-caret-down-fill.oxd-select-text--arrow').first().click();
-  await page.getByRole('option', { name: '-- Select --' }).click();
-  await page.locator('.oxd-icon.bi-caret-down-fill.oxd-select-text--arrow').first().click();
-  await page.locator('div').filter({ hasText: /^Employee Name$/ }).nth(2).click();
-  await page.locator('div').filter({ hasText: /^Employee Name$/ }).nth(1).click();
-  await page.getByRole('textbox', { name: 'Type for hints...' }).click();
-  await page.getByText('Status-- Select --').click();
-  await page.getByText('Status', { exact: true }).click();
-  await page.locator('div:nth-child(4) > .oxd-input-group > div:nth-child(2) > .oxd-select-wrapper > .oxd-select-text > .oxd-select-text--after > .oxd-icon').click();
-  await page.getByRole('option', { name: '-- Select --' }).click();
-  await page.getByText('Reset Search').click();
-  await page.getByText('Reset Search').click();
-  await page.getByRole('button', { name: 'Search' }).click();
-  await page.locator('.orangehrm-header-container').click();
-  await page.getByRole('button', { name: ' Add' }).click();
-  await page.locator('.orangehrm-horizontal-padding').click();
-  await page.getByText('(5) Records Found').click();
-  await page.locator('.orangehrm-container').click();
-  await page.getByRole('columnheader', { name: 'Username ' }).click();
-  await page.getByRole('columnheader', { name: 'User Role ' }).click();
-  await page.getByRole('columnheader', { name: 'Employee Name ' }).click();
-  await page.getByRole('columnheader', { name: 'Status ' }).click();
-  await page.getByRole('columnheader', { name: 'Actions' }).click();
-  await page.locator('.oxd-icon.bi-check').first().click();
-  await page.locator('.oxd-icon.bi-dash').click();
-  await page.getByText('Admin').nth(2).click();
-  await page.getByText('Admin').nth(3).click();
-  await page.getByText('Tiago Ferreira').click();
-  await page.getByText('Enabled').first().click();
-  await page.getByRole('button').filter({ hasText: /^$/ }).nth(4).click();
-  await page.getByRole('button').filter({ hasText: /^$/ }).nth(3).click();
+test('validate UI admin', async ({ page }) => { 
+
+    await LoginHelp(page, user.usuarioValido.username, user.usuarioValido.password);
+    
+    const OpenAdmin = new adminPage(page); //instancio la clase adminPage para usar sus metodos
+    await OpenAdmin.OpenModuloAdmin(); //uso el metodo para abrir el modulo admin
+    await OpenAdmin.AdminPageLoaged('Admin'); //verifico que el modulo admin se haya cargado
+    await OpenAdmin.AdminElementsBeVisible(); //verifico que los elementos principales del modulo admin sean visibles
+    await expect(page.getByText('System Users')).toBeVisible(); 
+    await expect(page.getByLabel('Topbar Menu').getByText('User Management')).toBeVisible();
+   
+
+    const AdminModules = ['Job', 'Organization', 'Qualifications', 'Nationalities', 
+        'Corporate Branding','Configuration']; 
+    for (const modules of AdminModules) { 
+          await expect(page.getByText(modules)).toBeVisible();
+    }
+    const FilterElements = ['Username', 'User Role', 'Employee Name', 'Status']; 
+    for (const elementf of FilterElements) { 
+          await expect(page.getByText(elementf )).toBeVisible();
+    }
+    const ResultElements = ['Username', 'User Role', 'Employee Name', 'Status', 'Actions']; 
+    for (const elementR of ResultElements) { 
+          await expect(page.getByRole('columnheader', { name: elementR })).toBeVisible();
+
+    }
+
+
 });
