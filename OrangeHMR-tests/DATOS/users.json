@@ -17,6 +17,13 @@
         "userRole": "Admin",
         "employeeName": "Qwerty Qwerty LName",
         "status": "Disabled"
+    },
+
+        "filtroUserEmpty": {
+        "username": " ",
+        "userRole": "-- Select --",
+        "employeeName": "",
+        "status": "-- Select --"
     }
 }
 
