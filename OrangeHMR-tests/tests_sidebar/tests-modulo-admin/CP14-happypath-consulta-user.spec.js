@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { LoginHelp } from '../../HELPER/LoginHelp.js';
-import { adminPage } from '../../MAPEOSpage/adminPage.js';
+import { LoginHelp } from '../../helper/LoginHelp.js';
+import { adminPage } from '../../mapeos-page/adminPage.js';
 const user = require('../../DATOS/users.json'); 
 
 test('Happy-path-filtro-user', async ({ page }) => { 

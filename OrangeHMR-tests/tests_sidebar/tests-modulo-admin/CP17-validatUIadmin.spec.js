@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { LoginHelp } from '../../HELPER/LoginHelp.js';
-import { adminPage } from '../../MAPEOSpage/adminPage.js';
+import { LoginHelp } from '../../helper/LoginHelp.js';
+import { adminPage } from '../../mapeos-page/adminPage.js';
 const user = require('../../DATOS/users.json'); 
 
 test('validate UI admin', async ({ page }) => { 
@@ -22,7 +22,7 @@ test('validate UI admin', async ({ page }) => {
     }
     const FilterElements = ['Username', 'User Role', 'Employee Name', 'Status']; 
     for (const elementf of FilterElements) { 
-          await expect(page.getByText(elementf )).toBeVisible();
+          await expect(page.getByText(elementf )).toBeVisible(); 
     }
     const ResultElements = ['Username', 'User Role', 'Employee Name', 'Status', 'Actions']; 
     for (const elementR of ResultElements) { 
